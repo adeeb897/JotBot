@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "gradle",
+			"id": "c:\\Users\\zaman\\workplace\\JotBotbuildJotBot",
+			"script": "build",
+			"description": "Assembles and tests this project.",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"project": "JotBot",
+			"buildFile": "C:\\Users\\zaman\\workplace\\JotBot\\build.gradle",
+			"rootProject": "JotBot",
+			"projectFolder": "c:\\Users\\zaman\\workplace\\JotBot",
+			"workspaceFolder": "c:\\Users\\zaman\\workplace\\JotBot",
+			"args": "",
+			"javaDebug": false,
+			"problemMatcher": [
+				"$gradle"
+			],
+			"label": "gradle: build"
+		}
+	]
+}
