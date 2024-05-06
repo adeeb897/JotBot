@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    id("io.freefair.lombok") version "8.6"
 }
 
 repositories {
@@ -21,6 +22,16 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // Logging
+    implementation("org.apache.logging.log4j:log4j-api:2.23.1")
+    implementation("org.apache.logging.log4j:log4j-core:2.23.1")
+    implementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.23.1")
+    implementation("org.slf4j:slf4j-api:2.0.13")
+
+    // Guice
+    implementation("com.google.inject:guice:7.0.0")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

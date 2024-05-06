@@ -3,12 +3,33 @@
  */
 package com.jotbot;
 
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
+import com.google.inject.name.Named;
+import com.jotbot.audio.device.LocalDeviceAudioStreamer;
+import com.jotbot.audio.speech.AudioHandler;
+import com.jotbot.module.AudioStreamerModule;
+import com.jotbot.module.ModuleConstants;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+
+    @Inject
+    @Named(ModuleConstants.MICROPHONE)
+    private LocalDeviceAudioStreamer micStreamer;
+
+    @Inject
+    private AudioHandler audioHandler;
+
+    public void start() {
+        audioHandler.handleAudio(micStreamer.startStream());
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Injector injector = Guice.createInjector(
+            new AudioStreamerModule()
+        );
+        App app = injector.getInstance(App.class);
+        app.start();
     }
 }
