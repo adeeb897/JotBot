@@ -28,3 +28,11 @@ replay_pid*
 
 # Ignore Gradle build output directory
 build
+
+.vscode/
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
